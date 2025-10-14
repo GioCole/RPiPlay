@@ -321,6 +321,8 @@ extern "C" void conn_init(void *cls) {
 
 extern "C" void conn_destroy(void *cls) {
     if (video_renderer) video_renderer->funcs->update_background(video_renderer, -1);
+    
+    running = false;
 }
 
 extern "C" void audio_process(void *cls, raop_ntp_t *ntp, aac_decode_struct *data) {
